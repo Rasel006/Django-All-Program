@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practeics</title>
+</head>
+<body>
+    <h1 style="text-align:center;">This the page where i do practices </h1>
+    
+    {% comment %} earthly  s  {% endcomment %}
+
+    {% comment %} User JOIN  {% endcomment %}
+    <h2>In here we will see hows to print  and list and condcat it</h2>
+    <h3>Print:{{namelist}}</h3>
+    <h3>Contact it with space Using JOIN filter of the Django : {{namelist | join:" "}} </h3>
+<hr>
+    {% comment %} USE DATA TIME  {% endcomment %}
+    <h2>Here’s the syntax to use the date filter:</h2>
+    <h3>Normal format: {{datafilter | date:"D d M Y"}}</h3>
+    <h3>Another format: {{datafilter | date}}</h3>
+<hr>
+    {% comment %} USER DEFAULT  {% endcomment %}
+    <h2>Here's The Default Filter we use several way: </h2>
+    <h3>First And Simple: {{fordefaultuse | default:"This the default Use case"}}</h3>
+    {% with the_var=dictornary.fordefaultuse %}
+    <h3>Secnond and more details: {{the_var | default:"This the default case in another wayy"}}</h3>
+    {% endwith %}
+<hr>
+    {% comment %} USE ADD FILTER  {% endcomment %}
+    <h2>Here's The Add Filter User case </h2>
+    <h3>User ADD ON INT: {{ForAddFilterINT | add:"5"}}</h3>
+<hr>
+    {% comment %} USE Capfirst Filter  {% endcomment %}
+    <h2>Here's The Capfirst Filter </h2>
+    <h3>CapFirst: {{ForCapfirstFilter | capfirst}}</h3>
+<hr>
+    {% comment %} USE CUT Filter  {% endcomment %}
+    <h2>Here's The Cut Filter </h2>
+    <h3>Cut Filter Cut the spcaces : {{ForCutFilter | cut:" "}}</h3>
+<hr>
+    <h2>Here's The Dictsort Filter </h2>
+    <h3>Dictsort Filter With String : {{ForDictsortFilter | dictsort:"name"}}</h3>
+    <h3>Dictsort Filter With Int : {{ForDictsortFilter | dictsort:"age"}}</h3>
+<hr>
+    <h2>Here's  The EEscape Filter </h2>
+    <h3>Escape Filter: {{ForEscapeFilter | escape}}</h3>
+<hr>
+    <h2>Here's The First Filter</h2>
+    <h3>First Filter: {{ForFirstFilter|first}}</h3>
+<hr>
+    <h2>Here's The Last Filter</h2>
+    <h3>Last Filter: {{ForLastFilter |last}}</h3>
+<hr>
+    <h2>Here's The Length Filter </h2>
+    <h3>Length Filter: {{ForLengthFilter | length}}</h3>
+<hr>
+    <h2>Here's Linenumbers Filter</h2>
+    <h3>Linenumbers Filter: {{ForLinenumbersFilter | linenumbers}}</h3>
+<hr>
+    <h2>Here's Lower Filter</h2>
+    <h3>Lower Filter: {{ForLowerFilter | lower}}</h3>
+<hr>
+    <h2>Here's Upper Filter</h2>
+    <h3>Upper Filter: {{ForUpperFilter | upper}}</h3>
+<hr>
+    <h2>Here's Title Filter</h2>
+    <h3>Title Filter: {{ForTitleFilter | title}}</h3>
+<hr>
+    <h2>Here's Random Filter</h2>
+    <h3>Random Filter: {{ForRandomFilter | random}}</h3>
+<hr>
+    <h2>Here's Slice Filter</h2>
+    <h3>Slice Filter: {{ForSliceFilter | slice:"1:3"}}</h3>
+<hr>
+    <h2>Here's Time Filter</h2>
+    <h3>Time Filter: {{ForTimeFilter | time:"H:i"}}</h3>
+<hr>
+    <h2>Here's Time Filter</h2>
+    <h3>Time Filter: {{ForTimeFilter | time:"H:i"}}</h3>
+<hr>
+    <h2>Here's Timesince Filter</h2>
+    <h3>Timesince Filter: {{ForTimesinceFilter | timesince}} ago</h3>
+<hr>
+    <h2>Here's Truncatechars Filter</h2>
+    <h3>Truncatechars Filter: {{ForTruncatecharsFilter | truncatechars:7}}</h3>
+<hr>
+    <h2>Here's Wordcount Filter</h2>
+    <h3>Wordcount Filter: {{ForWordcountFilter | wordcount}}</h3>
+
+<hr>
+    <h2>Here's Truncatewords Filter</h2>
+    <h3>Truncatewords Filter: {{ForTruncatewordsFilter | truncatewords:3}}</h3>
+
+<hr>
+    <h2>Here's Striptags Filter</h2>
+    <h3>Striptags Filter: {{ForStriptagsFilter | striptags}}</h3>
+
+
+<hr>
+    <h2>Here's Pluralize Filter</h2>
+    <h3>Pluralize Filter: {{ForPluralizeFilter}} massage{{ForPluralizeFilter | pluralize}}</h3>
+
+
+<hr>
+    <h2>Here's Make_list Filter</h2>
+    <h3>ForMake_listFilter: {{ForMake_listFilter | make_list}}</h3>
+    
+
+
+    {% comment %} Geek for geeks s  {% endcomment %}
+<hr>
+    <h2>Here's addslashes Filter</h2>
+    <h3>addslashesFilter: {{Foraddslashes | addslashes}}</h3>
+
+<hr>
+    <h2>Here's Center Filter</h2>
+    <h3>Center Filter: {{ForCenterFilter | center:"200"}}</h3>
+
+<hr>
+    <h2>Here's Divisibleby Filter</h2>
+    <h3>Divisibleby Filter: {{Fordivisibleby | divisibleby:"3"}}</h3>
+
+<hr>
+    <h2>Here's Filesizeformat Filter</h2>
+    <h3>Filesizeformat Filter: {{Forfilesizeformat | filesizeformat}}</h3>
+
+    
+<hr>
+    <h2>Here's Slugify Filter</h2>
+    <h3>Slugify Filter: {{Forslugify | slugify}}</h3>
+<hr>
+    <h2>Here's Unordered List Filter</h2>
+    <h3>Unordered List: {{ListOfValue | unordered_list}}</h3>
+    <h3>Course Name List: {{ListOfValueCourseName | unordered_list}}</h3>
+
+
+</body>
+</html>
