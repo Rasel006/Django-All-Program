@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<div class="row">
+  <div class="col-lg-6 content">
+    <div >
+      <h1 class="text-center">Wellcome To Our </br> Car-Mart</h1>
+      <p>
+        Rogers-based America’s Car-Mart Inc. is expected to see a double-digit
+        decline in earnings and almost flat revenue growth in the fourth quarter
+        of fiscal 2023 as expenses rise and vehicle prices stabilize. For the
+        year, revenue is expected to rise by double digits while earnings fall
+        by double digits. Before the markets open May 24, the buy here, pay here
+        used car dealer is expected to report earnings fell to $1.13 per share
+        in the quarter ending April 30 from $4.01 per share in the same period
+        last year, based on a consensus of three analysts. Revenue is projected
+        to rise by 0.3% to $352.87 million from $351.84 million.
+      </p>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <img src="{% static 'home.jpg' %}" class="img-fluid" alt="Image" />
+  </div>
+  <div class="d-flex flex-wrap justify-content-center">
+    <a href="/" class="btn btn-outline-primary m-2 px-4 py-2 ">All</a>
+    {% for brand in categories %}
+        <div >
+            <a href="{% url 'category_wise_post' brand.slug %}" class="btn btn-outline-primary m-2 px-4 py-2 ">{{ brand.name }}</a>
+        </div>
+    {% endfor %} 
+</div>
+  <div class="d-flex flex-wrap justify-content-center">
+    <div class="row">
+      <h4>{{cards | length }} result found</h4>
+      {% for i in cards %}
+      <div class="col-sm-4 mb-3 mb-sm-0">
+        <div class="card">
+          <img src={{i.image.url}} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="card-title text-decoration-none" >{{i.title}}</a>
+            </h5>
+            <p>Price: {{i.price}} $</p>
+            <p> Categiry: {{i.brand}}</p>
+            <p>
+              <a href="{% url 'details_post' i.id %}" class="btn btn-outline-primary m-2 px-4 py-2 ">View Details</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+</div>
+</div>
+{% endblock %}
