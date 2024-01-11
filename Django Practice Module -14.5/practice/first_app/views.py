@@ -23,8 +23,8 @@ def modelform(request):
         if form.is_valid():
             print(form.cleaned_data)
             form.save()
-            return render(request, 'modelform.html', {'form': form})
+            return render(request, ' bootstrap5/modelform.html', {'form': form})
     else:
         form = MyForm()
         
-    return render(request, 'modelform.html', {'form': form})
+    return render(request,  ' bootstrap5/modelform.html', {'form': form})
