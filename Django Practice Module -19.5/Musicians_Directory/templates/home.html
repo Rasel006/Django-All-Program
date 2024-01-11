@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<h1>This is home page</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Musician Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Album Rating</th>
+      <th scope="col">Instrument Type</th>
+      <th scope="col">Album Name</th>
+      <th scope="col">Release Date</th>
+      {% if user.is_authenticated %}
+      <th scope="col">Action</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for album in data %}
+    <tr>
+      <th scope="row">{{ album.id }}</th>
+      <td>{{ album.musician.first_name }} {{ album.musician.last_name }}</td>
+      <td>{{ album.musician.email }}</td>
+      <td>{{ album.rating }}</td>
+      <td>{{ album.musician.instrument_type }}</td>
+      <td>{{ album.album_name }}</td>
+      <td>{{ album.album_release_date }}</td>
+      <td>
+      {% if user.is_authenticated %}
+      <a href={% url 'delete_album' album.pk %} class="btn btn-danger">Delete</a>
+      <a href={% url 'edit_album' album.pk %} class="btn btn-warning">Edit</a>
+      {% endif %}
+        
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
